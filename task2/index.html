@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-bullhorn"></i> Tweet Prediction Form</h1>
+        <form id="predictionForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="datetime">Datetime:</label>
+                <input type="datetime-local" class="form-control" id="datetime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="likes">Likes:</label>
+                <input type="number" class="form-control" id="likes" required>
+            </div>
+
+            <div class="form-group">
+                <label for="media">Media (URL):</label>
+                <input type="text" class="form-control" id="media">
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company:</label>
+                <input type="text" class="form-control" id="company" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Predict <i class="fas fa-paper-plane"></i></button>
+        </form>
+
+        <h2 id="result"></h2>
+    </div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const datetime = document.getElementById('datetime').value;
+            const likes = document.getElementById('likes').value;
+            const media = document.getElementById('media').value;
+            const company = document.getElementById('company').value;
+
+            console.log(username,datetime,likes,media,company)
+
+            const response = await fetch('http://localhost:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, datetime, likes, media, company })
+            });
+
+            const data = await response.json();
+            document.getElementById('result').innerText = data.predicted_content;
+        });
+    </script>
+</body>
+</html>
