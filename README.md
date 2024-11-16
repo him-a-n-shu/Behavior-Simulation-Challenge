@@ -6,6 +6,8 @@ The challenge includes two primary tasks:
 1. **Behavior Simulation**: Predicts user engagement (number of likes) on tweets based on tweet content, media type, company, username, and timestamp. 
 2. **Content Simulation**: Generates potential tweet content based solely on metadata (company, username, media type, timestamp).
 
+[Training Dataset](https://docs.google.com/spreadsheets/d/1JcESl7qCCBvS6xpWMZplhCXunvmkcNU_/edit?usp=drive_link&ouid=101476968084918341858&rtpof=true&sd=true)
+
 ## Approach
 ### Task 1: Behavior Simulation
 - **Objective**: Predict engagement levels for social media posts.
