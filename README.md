@@ -25,17 +25,20 @@ The challenge includes two primary tasks:
 - `task 1/` - Folder containing files for Behavior Simulation.
 - `task 2/` - Folder containing files for Content Simulation.
 
-### Installation
-Clone the repository:
+## Installation
+1. Clone the repository:
    ```bash
-   git clone https://github.com/him-a-n-shu/adobe-behavior-simulation.git
-   cd adobe-behavior-simulation
-```
+   git clone https://github.com/him-a-n-shu/Behavior-Simulation-Challenge.git
+   cd Behavior-Simulation-Challenge
+
+2. For Task 1, run `app_task_1.py` and open `index.html` in browser.
+
+3. For Task 2, run `app.py` and open `index.html` in browser.
 
 ## Team
 - [HIMANSHU](https://github.com/him-a-n-shu)
 - [D Barghav](https://github.com/Barghav777)
-- Purushartha Gupta
+- [Purushartha Gupta](https://github.com/Puru348)
 - Aman Nagar
 - Palak
 - Misti D Shah
