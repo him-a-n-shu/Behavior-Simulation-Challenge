@@ -17,7 +17,7 @@ CORS(app)  # This will allow CORS for all routes by default
 # Load models and tokenizer
 nlp = spacy.load("en_core_web_md")
 # Load models and tokenizer
-classifier = joblib.load('xgboost_model (2).joblib')
+classifier = joblib.load('xgboost_model_2.joblib')
 y_reg1 = joblib.load("xgb_regressor_model_cat1 (1).joblib")
 y_reg2 = joblib.load("xgb_regressor_model_cat2 (1).joblib")
 y_reg3 = joblib.load("xgb_regressor_model_cat3 (1).joblib")
